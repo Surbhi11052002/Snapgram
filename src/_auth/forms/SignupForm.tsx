@@ -34,7 +34,7 @@ const SignupForm = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    //console.log(values);
+    console.log(values);
     const newUser = await createUserAccount(values);
     console.log(newUser);
   }
@@ -44,11 +44,10 @@ const SignupForm = () => {
         <img src="/assets/images/logo.svg" />
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Create a new account
-          <p className="text-light-3 small-medium md:base-regular mt-2">
-            To use Snapgram , Please enter your account details
-          </p>
         </h2>
-
+        <p className="text-light-3 small-medium md:base-regular mt-2">
+          To use Snapgram , Please enter your account details
+        </p>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col gap-5 w-full mt-4"
